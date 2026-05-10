@@ -38,6 +38,8 @@ If using the Brython versions (`brython.min.js` or `brython-bundled.min.js`), pl
 <script src="https://cdn.jsdelivr.net/npm/epoxy-tls-polyfill@1/dist/brython.min.js"></script>
 ```
 
+**Brython version compatibility:** The Brython versions of the polyfill support Brython versions between **3.8.10 and 3.14.0 inclusive**.
+
 Including **both unbundled** or **both bundled** script versions is supported and they will share a single `epoxy-tls` instance.
 Mixing bundled and unbundled versions is untested and may lead to unexpected behavior.
 

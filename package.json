@@ -1,6 +1,6 @@
 {
   "name": "epoxy-tls-polyfill",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Polyfills for XHR, fetch, and the Brython AJAX interface using epoxy-tls",
   "keywords": [
     "brython",

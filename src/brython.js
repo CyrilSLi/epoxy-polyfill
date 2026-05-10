@@ -16,6 +16,16 @@ if (typeof _epoxyPolyfillClient === "undefined") {
 }
 
 {
+// Supported Brython versions: >= 3.8.10, <= 3.14.0
+if (
+    !window.$B ||
+    $B.implementation[0] != 3 ||
+    ($B.implementation[1] < 8 || ($B.implementation[1] == 8 && $B.implementation[2] < 10)) ||
+    ($B.implementation[1] > 14 || ($B.implementation[1] == 14 && $B.implementation[2] > 0))
+) {
+    alert("epoxy-tls-polyfill: Unsupported Brython version detected. Please use a version between 3.8.10 and 3.14.0 inclusive.");
+}
+
 let oldBrowser = $B.imported.browser;
 $B.imported.browser = new Proxy(oldBrowser, {
     set(target, prop, value) {
