@@ -7,7 +7,7 @@ if (typeof _epoxyPolyfillClient === "undefined") {
             wisp_v2: true,
             udp_extension_required: true
         });
-        _epoxyPolyfillClient = new et.EpoxyClient("wss://wisp.mercurywork.shop", options);
+        _epoxyPolyfillClient = new et.EpoxyClient(window._epoxyPolyfillServer ?? "wss://wisp.mercurywork.shop", options);
         while (_epoxyPolyfillQueue.length > 0) {
             _epoxyPolyfillQueue.shift()();
         }

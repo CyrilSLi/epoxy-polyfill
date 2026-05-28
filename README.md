@@ -43,9 +43,20 @@ If using the Brython versions (`brython.min.js` or `brython-bundled.min.js`), pl
 Including **both unbundled** or **both bundled** script versions is supported and they will share a single `epoxy-tls` instance.
 Mixing bundled and unbundled versions is untested and may lead to unexpected behavior.
 
+## Wisp Server
+
+By default the scripts will connect to the public [Wisp](https://github.com/MercuryWorkshop/wisp-protocol) server at `wss://wisp.mercurywork.shop`. If you want to use a different Wisp server, set `window._epoxyPolyfillServer` to the WebSocket URL of the server before including the script(s), for example:
+
+```html
+<script>
+    window._epoxyPolyfillServer = "wss://wisp.example.com";
+</script>
+<script src="https://cdn.jsdelivr.net/npm/epoxy-tls-polyfill@1/dist/javascript.min.js"></script>
+```
+
 ## Todo
 
-- Allow configuring the `epoxy-tls` instance (e.g. proxy URL, the `EpoxyClientOptions` object)
+- Allow configuring the `epoxy-tls` instance (e.g. the `EpoxyClientOptions` object)
 
 ## License
 
