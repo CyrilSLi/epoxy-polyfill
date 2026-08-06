@@ -15,7 +15,10 @@ if (typeof _epoxyPolyfillClient === "undefined") {
     }, (err) => console.error("Error initializing epoxy-tls:", err)), (err) => console.error("Error loading epoxy-tls:", err));
 }
 
-function fetch(url, options) {  
+window._epoxyPolyfillOrigFetch = window.fetch;
+window._epoxyPolyfillOrigXHR = window.XMLHttpRequest;
+
+const fetch = (url, options) => {  
     if (_epoxyPolyfillClient != null) {
         return _epoxyPolyfillClient.fetch(url, options);
     } else {
@@ -235,3 +238,6 @@ class XMLHttpRequest extends EventTarget {
         return this.#upload;
     }
 }
+
+window.fetch = fetch;
+window.XMLHttpRequest = XMLHttpRequest;

@@ -54,6 +54,10 @@ By default the scripts will connect to the public [Wisp](https://github.com/Merc
 <script src="https://cdn.jsdelivr.net/npm/epoxy-tls-polyfill@1/dist/javascript.min.js"></script>
 ```
 
+## Accessing native fetch and XHR
+
+To access the native `fetch` and `XMLHttpRequest` functions, use `window._epoxyPolyfillOrigFetch` and `window._epoxyPolyfillOrigXHR` respectively.
+
 ## Todo
 
 - Allow configuring the `epoxy-tls` instance (e.g. the `EpoxyClientOptions` object)
